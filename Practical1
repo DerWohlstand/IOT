@@ -1,0 +1,122 @@
+1.(a) Automatic Alarm system- Alarm should get tigger by sensor:
+Steps to Perform:
+Step 1:  1) Take Motion Sensor
+              2) Take Component - MCU Board 
+              3) Take Alarm 
+
+Step 2: 1) Now we will connect the Motion Sensor to MCU Board with 
+                  IoT custom cable connect Motion Sensor (D0) to connect with MCU Board (D0) 
+    2)Then we will connect MCU board to Alarm with IoT custom cable connect MCU 
+        Board (D1) to Alarm (D0)
+
+ 
+
+
+Step 3 : 1) Now click on MCU Board go to Programming then Select New, Select Template-
+                  Empty-Python then click on Create
+              2) Click on main.py file then write code  
+   
+ 
+Code :-
+from gpio import *
+from time import *
+
+def main():
+	pinMode(0,IN)
+	while True:
+		if digitalRead(0) == HIGH:
+			print("Alaram Activated")
+			digitalWrite(1,HIGH)
+		else:
+			print("Alarm DeActivated")
+			digitalWrite(1,LOW)
+		sleep(1)
+if __name__ == "__main__":
+main()
+
+
+
+
+
+
+Step 4 : 1) Click on Run  
+
+ 
+1.(b) Timer based buzzer:
+
+Steps to Perform:
+Step 1: 1) Take Component - MCU Board 
+             2) Take Alarm
+
+Step 2: 1) Now we will connect MCU board to Alarm with IoT custom cable connect MCU 
+      Board (D0) to Alarm (D0)
+
+   
+
+
+
+
+Step 3: 1) Now click on MCU Board go to Programming then Select New, Select Template-
+                 Empty-Python then click on Create
+             2) Click on main.py file then write code  
+
+ 
+
+
+Code:
+from gpio import *
+from time import *
+
+def main():
+	while True:
+		print("Program Started")
+		digitalWrite(0,HIGH)
+		sleep(1)
+		digitalWrite(0,LOW)
+		sleep(1)
+if __name__=="__main__":
+	main()
+	
+
+
+
+Step 4 : 1) Click on Run 
+ 
+ 
+ 
+1.(c) Sensor based Counting device: 
+Steps to Perform:
+Step 1:  1) Take Motion Sensor
+              2) Take Component - MCU Board 
+ Step 2: 1) Now we will connect the Motion Sensor to MCU Board with 
+                  IoT custom cable connect Motion Sensor (D0) to connect with MCU Board (D0) 
+
+ 
+
+
+
+Step 3 : 1)Now click on MCU Board go  to Programming then Select New , Select Template-
+                  Empty-Python then click on Create
+              2) Click on main.py file then write code  
+
+Code:
+from gpio import *
+from time import *
+ 
+def main():
+	count = 0
+	pinMode(0,IN)
+	while True:
+		if digitalRead(0) == HIGH:
+			print(count)
+			sleep(1)
+			count += 1
+
+if __name__ == "__main__":
+	main()
+
+ 
+Step 4 : 1) Click on Run  
+              2) Press Alt button then Start Counting
+
+   
